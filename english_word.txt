@@ -41,9 +41,9 @@ accurate a.准确的，正确无误的
 accuse vt.指责;归咎于
 accustom vt.使习惯
 accustomed a.惯常的;习惯的
-ache vi.痛;想念 n.疼痛
-achieve vt.完成，实现;达到
-achievement n.完成;成就，成绩
+ache vi.到
+achievement n.完成;成就，成绩痛;想念 n.疼痛
+achieve vt.完成，实现;达
 acid n.酸;酸的，酸性的
 acquaintance n.认识;了解;熟人
 acquire vt.取得;获得;学到
@@ -4530,9 +4530,4 @@ nylon n.尼龙，耐纶
    zebra                n.斑马
    zero                 n.零;零点，零度
    zone                 n.地区，区域，范围
-   zoo                  n.动物园 
-
-
-
- 
- 
+   zoo                  n.动物园
