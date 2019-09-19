@@ -2,25 +2,37 @@
 """
 游戏精灵模块
 """
+import sys
 import pygame
 import Game_Info
 
 
 class WordSprite(pygame.sprite.Sprite):
     """单词精灵类"""
-    def __init__(self, word_text, speed=1):
+    def __init__(self, word_text, cn_comment, speed=1):
+        super().__init__()
+        self.word_text = word_text
+        self.cn_comment = cn_comment
         # 创建系统字体
-        # self.word_font = pygame.font.sysFont(u"幼圆", 68)
+        self.word_font = pygame.font.SysFont(u"幼圆", Game_Info.WORD_SIZE)
         # 根据字体创建显示对象(文字)    render(self,text,antialias,color,background = None)
-        self.word_surface = self.word_font.render(word_text, True, (0, 250, 0))
-        self.word_rect = self.word_surface.get_rect()
+        self.image = self.word_font.render(word_text, True, Game_Info.GREEN_WORD)
+        self.rect = self.image.get_rect()
         self.speed = speed
         pass
 
     def update(self):
         """垂直向下移动"""
-        self.word_rect.y = self.word_rect.y + self.speed
+        self.rect.y = self.rect.y + self.speed
+
+        if self.rect.y >= Game_Info.SCREEN_RECT.height:
+            print("扣分")
+            self.kill()
+            pass
         pass
+
+    def __del__(self):
+        print("超出屏幕%s" % self.rect)
 
 
 class BackGroundSprite(pygame.sprite.Sprite):
