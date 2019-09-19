@@ -6,10 +6,11 @@ import pygame
 
 GAME_NAME = "WordSprite"
 SCREEN_RECT = pygame.Rect(0, 0, 1000, 650)
+GAME_BLOOD_RECT = pygame.Rect(SCREEN_RECT.width/2 - 250, SCREEN_RECT.height - 26, 500, 25)
 GAME_BACKGROUND = "image/game_bg.jpg"
-WHITE_RECT = "image/white_rect.png"
+WHITE_RECT_IMAGE = "image/white_rect.png"
 FRAME_PRE_SEC = 60      # 游戏的刷新帧率
-WORD_SIZE = 25          # 单词大小
+WORD_SIZE = 18         # 单词大小
 
 # 字体颜色
 RED_WORD = pygame.color.Color("RED")
@@ -19,7 +20,7 @@ GREEN_WORD = pygame.color.Color("GREEN")
 WHITE_WORD = pygame.color.Color("WHITE")
 
 # 创建单词的时间间隔(毫秒)
-CREATE_WORD_INTERVAL = 1000 * 2
+CREATE_WORD_INTERVAL = 1000 * 3
 GENERATE_WORD_NUM = 6   # 首次生成单词的数量
 
 # 创建单词事件
@@ -28,5 +29,4 @@ CREATE_WORD_EVENT = pygame.USEREVENT
 GAME_OVER_EVENT = pygame.USEREVENT + 1
 
 if __name__ == '__main__':
-    a = "456abc"
-    print(a[:-1])
+    print(pygame.font.get_fonts())
