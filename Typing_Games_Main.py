@@ -34,16 +34,25 @@ class TypingGame(object):
         self.screen = pygame.display.set_mode(Game_Info.SCREEN_RECT.size)
         self.game_clock = pygame.time.Clock()
         self.__create_sprite()
+        self.word_content = ""
+        # 设置创建单词的定时器
         pygame.time.set_timer(Game_Info.CREATE_WORD_EVENT, Game_Info.CREATE_WORD_INTERVAL)
+        pygame.display.set_caption(Game_Info.GAME_NAME)
         pass
 
     def __create_sprite(self):
         """创建精灵和精灵组"""
-        back_sprite = BackGroundSprite()
-        self.back_group = pygame.sprite.Group(back_sprite)
+        back_sprite = BackGroundSprite(Game_Info.GAME_BACKGROUND)
+        input_rect_sprite = BackGroundSprite(Game_Info.WHITE_RECT)
+        input_rect_sprite.rect.x = Game_Info.SCREEN_RECT.width/2 - input_rect_sprite.rect.width/2
+        input_rect_sprite.rect.y = -30
+        self.back_group = pygame.sprite.Group(back_sprite, input_rect_sprite)
         # 创建单词精灵组
         self.word_group = pygame.sprite.Group()
-        self.__random_generate_word()
+        self.__random_generate_word(Game_Info.GENERATE_WORD_NUM)
+
+        text_sprite = ShowTextSprite("")
+        self.text_group = pygame.sprite.Group(text_sprite)
         pass
 
     def __update_sprite(self):
@@ -54,6 +63,8 @@ class TypingGame(object):
 
         self.word_group.update()
         self.word_group.draw(self.screen)
+
+        self.text_group.draw(self.screen)
         pass
 
     def start_game(self):
@@ -62,30 +73,31 @@ class TypingGame(object):
             # 设置游戏刷新帧率
             self.game_clock.tick(Game_Info.FRAME_PRE_SEC)
             self.__event_handle()
-            # self.__check
+            self.__check_spell_word()
             self.__update_sprite()
             pygame.display.update()
 
     def __event_handle(self):
-        """事件监听"""
         for event in pygame.event.get():  # 遍历所有事件
             if event.type == pygame.QUIT:  # 如果单击关闭窗口，则退出
                 sys.exit()
             elif event.type == Game_Info.CREATE_WORD_EVENT:
-                self.__random_generate_word()
+                self.__random_generate_word(word_num=3)
             elif event.type == pygame.KEYDOWN:
-                result = pygame.key.get_pressed()
-                for i in range(len(result)):
-                    if result[i] > 0:
-                        key_value = pygame.key.name(i)
-                        print(key_value)
-                pass
-        pass
+                # 英文单引号的ASCII值是39
+                if (pygame.K_a <= event.key <= pygame.K_z) or event.key == 39:
+                    self.word_content += pygame.key.name(event.key)
+                    print(self.word_content)
+                elif event.key == pygame.K_BACKSPACE:
+                    # 回删判断
+                    if self.word_content != "":
+                        self.word_content = self.word_content[:-1]
+                        print(self.word_content)
 
     def __random_generate_word(self, word_num=6):
         """
-        随机生成6个单词精灵
-        :param word_num:
+        随机生成单词精灵
+        :param word_num:精灵数量
         :return:
         """
         count = 0
@@ -93,24 +105,24 @@ class TypingGame(object):
             index = random.randint(0, len(self.words) - 1)
             eng_word = self.words[index]["eng_word"]
             cn_comment = self.words[index]["cn_comment"]
-            print(eng_word + "----" + cn_comment)
-            word_sprite = WordSprite(eng_word, cn_comment, 1)
+            # print(eng_word + "----" + cn_comment)
+            word_sprite = WordSprite(eng_word, cn_comment)
             word_x = random.randint(0, Game_Info.SCREEN_RECT.width - word_sprite.rect.width)
-            word_y = random.randint(0, Game_Info.SCREEN_RECT.height / 10)
+            word_y = -random.randint(0, Game_Info.SCREEN_RECT.height / 10)
             word_sprite.rect.x = word_x
             word_sprite.rect.bottom = word_y
-            if count == 0:
+
+            # 检查新单词精灵是否与单词精灵组中的精灵碰撞(重叠)
+            words = pygame.sprite.spritecollide(word_sprite, self.word_group, False,
+                                                pygame.sprite.collide_circle_ratio(1.3))
+            # 碰撞(释放内存重新随机生成单词精灵)
+            if len(words) > 0:
+                word_sprite.kill()
+                continue
+            else:
                 self.word_group.add(word_sprite)
                 count += 1
-            else:
-                words = pygame.sprite.spritecollide(word_sprite, self.word_group, True)
-                if len(words) > 0:
-                    word_sprite.kill()
-                    continue
-                else:
-                    self.word_group.add(word_sprite)
-                    count += 1
-            if count == word_num:
+            if count >= word_num:
                 break
 
     @staticmethod
@@ -118,7 +130,18 @@ class TypingGame(object):
         pygame.quit()
         sys.exit()
 
+    def __check_spell_word(self):
+        """检查拼写单词是否正确"""
+        word_sprites = self.word_group.sprites()
+        for word_sprite in word_sprites:
+            if self.word_content in word_sprite.word_text and len(self.word_content) >= 1\
+                    and self.word_content[0] == word_sprite.word_text[0]:
+                word_sprite.set_word_color(word_sprite.word_text, Game_Info.RED_WORD)
+                if self.word_content == word_sprite.word_text:
+                    word_sprite.kill()
+                    self.word_content = ""
+        pass
+
 
 if __name__ == '__main__':
-    typing_game = TypingGame()
-    typing_game.start_game()
+    TypingGame().start_game()
