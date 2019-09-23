@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Typing_Games_Main.py'],
-             pathex=['D:\\Tools\\Python\\workplace\\Typing_Game'],
+             pathex=['C:\\Users\\Administrator\\Desktop\\Typing_Game'],
              binaries=[],
              datas=[],
              hiddenimports=[],

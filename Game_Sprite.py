@@ -2,7 +2,7 @@
 """
 游戏精灵模块
 Author: Mr Liu
-Version: 1.0
+Version: 1.1
 """
 import pygame
 import Game_Info
@@ -17,10 +17,6 @@ class GameSprite(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.speed = speed
 
-    def update(self, *args):
-        self.rect.y = self.rect.y + self.speed
-        pass
-
 
 class BackGroundSprite(GameSprite):
     """背景精灵"""
@@ -29,8 +25,17 @@ class BackGroundSprite(GameSprite):
         # 加载游戏背景
         super().__init__(back_image)
 
-    def update(self):
-        super().update()
+
+class InputSprite(GameSprite):
+    """单词输入框精灵"""
+
+    def __init__(self, back_image):
+        # 加载输入框背景
+        super().__init__(back_image)
+        self.image = pygame.transform.scale(self.image,
+                                            (Game_Info.INPUT_RECT_WIDTH, Game_Info.INPUT_RECT_HEIGHT))
+        self.rect = self.image.get_rect()
+        self.rect.x = Game_Info.SCREEN_RECT.width / 2 - self.rect.width / 2
 
 
 class Bomb(object):
@@ -81,6 +86,7 @@ class Bomb(object):
 
 class WordSprite(pygame.sprite.Sprite):
     """单词精灵类"""
+
     def __init__(self, word_text, cn_comment=None, speed=Game_Info.WORD_SPEED):
         super().__init__()
         self.word_text = word_text
@@ -116,6 +122,7 @@ class WordSprite(pygame.sprite.Sprite):
 
 class ShowTextSprite(WordSprite):
     """显示输入单词的精灵"""
+
     def __init__(self, display_text):
         super().__init__(display_text, speed=0)
         self.rect.x = Game_Info.SCREEN_RECT.centerx
@@ -124,12 +131,13 @@ class ShowTextSprite(WordSprite):
     def update(self, word_text):
         super().set_word_color(word_text, Game_Info.PINK)
         self.rect = self.image.get_rect()
-        self.rect.x = Game_Info.SCREEN_RECT.width/2 - self.rect.width/2
+        self.rect.x = Game_Info.SCREEN_RECT.width / 2 - self.rect.width / 2
         self.rect.y = 50
 
 
 class ScoreSprite(WordSprite):
     """分数精灵"""
+
     def __init__(self, score):
         super().__init__(score, speed=0)
         self.rect.x = Game_Info.SCREEN_RECT.width - self.rect.width - 20
@@ -139,7 +147,3 @@ class ScoreSprite(WordSprite):
         super().set_word_color(score, Game_Info.RED, size=50)
         self.rect = self.image.get_rect()
         self.rect.x = Game_Info.SCREEN_RECT.width - self.rect.width - 20
-
-
-
-

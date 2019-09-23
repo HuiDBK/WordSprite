@@ -2,13 +2,12 @@
 """
 打字小游戏
 Author: Mr Liu
-Version: 1.0
+Version: 1.1
 """
 
 import os
 import sys
 import random
-import tkinter
 import pyautogui as gui
 from Game_Sprite import *
 
@@ -69,15 +68,11 @@ class TypingGame(object):
 
         # 背景精灵
         back_sprite = BackGroundSprite(Game_Info.GAME_BACKGROUND)
+        self.back_group = pygame.sprite.Group(back_sprite)
 
         # 单词显示框
-        input_rect_sprite = BackGroundSprite(Game_Info.INPUT_BACKGROUND)
-        input_rect_sprite.image = pygame.transform.scale(input_rect_sprite.image,
-                                                         (Game_Info.INPUT_RECT_WIDTH, Game_Info.INPUT_RECT_HEIGHT))
-        input_rect_sprite.rect = input_rect_sprite.image.get_rect()
-        input_rect_sprite.rect.x = Game_Info.SCREEN_RECT.width/2 - input_rect_sprite.rect.width/2
-
-        self.back_group = pygame.sprite.Group(back_sprite, input_rect_sprite)
+        input_rect_sprite = InputSprite(Game_Info.INPUT_BACKGROUND)
+        self.input_rect_group = pygame.sprite.Group(input_rect_sprite)
 
         # 创建单词精灵组
         self.word_group = pygame.sprite.Group()
@@ -93,8 +88,10 @@ class TypingGame(object):
     def __update_sprite(self):
         """更新精灵"""
         self.back_group.update()
-        # 把背景精灵组中的所有精灵绘制到游戏屏幕上
         self.back_group.draw(self.screen)
+
+        self.input_rect_group.update()
+        self.input_rect_group.draw(self.screen)
 
         self.word_group.update(self)
         self.word_group.draw(self.screen)
