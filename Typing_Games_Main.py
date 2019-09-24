@@ -191,7 +191,29 @@ class TypingGame(object):
                 break
 
     def __game_over(self):
-        result = gui.confirm("Game Over\nScore:" + str(self.total_score), "Game Over", buttons=["退出", "重玩"])
+        if not os.path.exists(Game_Info.SCORE_RECORD_FILE):
+            # 只写模式打开文件，如果文件不存在会自动创建
+            file = open(Game_Info.SCORE_RECORD_FILE, mode='w')
+            file.close()
+        # 读写模式打开
+        score_file = open(Game_Info.SCORE_RECORD_FILE, mode='r+', encoding='utf-8')
+        # 读取出历史最高成绩
+        lines = score_file.readline()
+        if lines:
+            highest_score = int(lines.split(":")[1])
+            if self.total_score > highest_score:
+                # 首先先清空上次的最高纪录
+                score_file.seek(0)
+                score_file.truncate()
+                highest_score = self.total_score
+                score_file.write("HighestScore:"+str(self.total_score))
+        else:
+            highest_score = self.total_score
+            score_file.write("HighestScore:" + str(self.total_score))
+        score_file.close()
+        result = gui.confirm("Game"+" "*5+"Over\n\n"+"Score:" + str(self.total_score) + "\n\n" +
+                             "HighestScore:"+str(highest_score),
+                             "Game Over", buttons=["退出", "重玩"])
         if result == "退出":
             pygame.quit()
             sys.exit()
@@ -212,7 +234,7 @@ class TypingGame(object):
                     and self.word_content[0].lower() == word_sprite.word_text[0].lower():
                 word_sprite.set_word_color(word_sprite.word_text, Game_Info.PINK)
                 if self.word_content.lower() == word_sprite.word_text.lower():
-                    self.score[0] += 2
+                    self.score[0] += 1
                     self.total_score += 1
                     if self.score[0] >= 50:
                         self.score[0] = 50
@@ -248,7 +270,6 @@ class TypingGame(object):
 
     def __bomb_action(self):
         """开启爆炸动画"""
-        # 切换爆炸图片
         for bomb in self.bombs:
             if bomb.visible:
                 bomb.action()

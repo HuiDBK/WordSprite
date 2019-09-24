@@ -8,15 +8,15 @@ import tkinter
 import pygame
 
 GAME_NAME = "WordSprite"
-SCREEN_RECT = pygame.Rect(0, 0, 1152, 690)
+SCREEN_RECT = pygame.Rect(0, 0, 1200, 800)
 INPUT_RECT_WIDTH = 600
 INPUT_RECT_HEIGHT = 100
 GAME_BLOOD_RECT = pygame.Rect(SCREEN_RECT.width / 2 - 250, SCREEN_RECT.height - 26, 500, 25)
 
 GAME_ICON = "image/rabbit.ico"
-GAME_BACKGROUND = "image/beautiful_girl.gif"
-WHITE_RECT_IMAGE = "image/white_rect.png"
+GAME_BACKGROUND = "image/game_bg.gif"
 INPUT_BACKGROUND = "image/input_bg.png"
+SCORE_RECORD_FILE = "score_record.txt"
 
 # 单词拼写成功后的消失动画
 KILL_ANIMATION = ["image/000.png", "image/001.png", "image/002.png", "image/003.png", "image/004.png",

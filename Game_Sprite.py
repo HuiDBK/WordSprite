@@ -24,6 +24,10 @@ class BackGroundSprite(GameSprite):
     def __init__(self, back_image):
         # 加载游戏背景
         super().__init__(back_image)
+        # 这样可以适应用户更改游戏背景图片但是可能会变形
+        self.image = pygame.transform.scale(self.image,
+                                            (Game_Info.SCREEN_RECT.width, Game_Info.SCREEN_RECT.height))
+        self.rect = self.image.get_rect()
 
 
 class InputSprite(GameSprite):
