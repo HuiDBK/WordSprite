@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef70815b-c71f-4132-afdf-53dfd01536d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Typing_Game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Typing_Game.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game_Info.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_Info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game_Sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_Sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Typing_Games_Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Typing_Games_Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/beautiful_girl.gif" beforeDir="false" afterPath="$PROJECT_DIR$/image/game_bg.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/game_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/white_rect.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/game_bg.gif" beforeDir="false" afterPath="$PROJECT_DIR$/image/game_bg.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,57 +15,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game_Info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="425">
+              <caret line="81" column="24" lean-forward="true" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
               <folding>
-                <element signature="e#1214#2268#0" />
+                <element signature="e#1204#2258#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game_Sprite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            <state relative-caret-position="216">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#143#338#0" />
-                <element signature="e#381#683#0" />
-                <element signature="e#437#683#0" />
-                <element signature="e#520#902#0" />
-                <element signature="e#929#2027#0" />
-                <element signature="e#2074#3241#0" />
-                <element signature="e#3282#3696#0" />
-                <element signature="e#3734#4122#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Typing_Games_Main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
-              <folding>
-                <element signature="e#66#75#0" expanded="true" />
-                <element signature="e#441#857#0" />
-                <element signature="e#975#1678#0" />
-                <element signature="e#1719#2378#0" />
-                <element signature="e#2419#3062#0" />
-                <element signature="e#3098#3477#0" />
-                <element signature="e#3517#4914#0" />
-                <element signature="e#3841#4931#0" />
-                <element signature="e#4965#5112#0" />
-                <element signature="e#5172#6315#0" />
-                <element signature="e#6352#7671#0" />
-                <element signature="e#7715#9050#0" />
-                <element signature="e#9116#9667#0" />
-                <element signature="e#9706#9826#0" />
+                <element signature="e#381#719#0" />
+                <element signature="e#757#1139#0" />
+                <element signature="e#1166#2264#0" />
+                <element signature="e#2311#3478#0" />
+                <element signature="e#3519#3933#0" />
+                <element signature="e#3971#4359#0" />
               </folding>
             </state>
           </provider>
@@ -96,7 +65,12 @@
       <find>upda</find>
       <find>__game</find>
       <find>__g</find>
+      <find>__game_over</find>
+      <find>__event</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -141,13 +115,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/document" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Tools\Python\workplace\Typing_Game\document" />
       <recent name="D:\Tools\Python\workplace\Typing_Game\image" />
       <recent name="D:\HUI\Python\WorkPlace\Typing_Game" />
       <recent name="D:\HUI\Python\WorkPlace\Typing_Game\image" />
@@ -211,7 +186,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Typing_Games_Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Typing_Games_Main" type="PythonConfigurationType" factoryName="Python">
       <module name="Typing_Game" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -234,13 +209,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.Typing_Games_Main" />
       <item itemvalue="Python.Game_Sprite" />
       <item itemvalue="Python.Game_Info" />
-      <item itemvalue="Python.Typing_Games_Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Typing_Games_Main" />
         <item itemvalue="Python.Game_Sprite" />
         <item itemvalue="Python.Game_Info" />
       </list>
@@ -263,11 +237,15 @@
       <workItem from="1568988393267" duration="161000" />
       <workItem from="1569060256118" duration="33638000" />
       <workItem from="1569330502433" duration="2597000" />
+      <workItem from="1569754196942" duration="104000" />
+      <workItem from="1569761548613" duration="5094000" />
+      <workItem from="1569797237868" duration="58000" />
+      <workItem from="1569935411594" duration="9241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69816000" />
+    <option name="totallyTimeSpent" value="84313000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -281,14 +259,12 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1735925" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1816354" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3611898" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -297,18 +273,20 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="SciView" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Typing_Game$Typing_Games_Main.coverage" NAME="Typing_Games_Main Coverage Results" MODIFIED="1569333038987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Typing_Games_Main.coverage" NAME="Typing_Games_Main Coverage Results" MODIFIED="1569945594573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Typing_Game$Game_Info.coverage" NAME="Game_Info Coverage Results" MODIFIED="1569145278299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Typing_Game$Game_Sprite.coverage" NAME="Game_Sprite Coverage Results" MODIFIED="1569332553769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -329,68 +307,54 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Lib/tkinter/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/image/game_bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/game_bg.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/image/game_bg.jpg" />
+    <entry file="file://$PROJECT_DIR$/image/white_rect.PNG" />
     <entry file="file://$PROJECT_DIR$/score_record.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/game_bg.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1385555194/pygame/key.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        <state relative-caret-position="113">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image/white_rect.PNG">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/Game_Info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="81" column="24" lean-forward="true" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+          <folding>
+            <element signature="e#1204#2258#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Typing_Games_Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+        <state relative-caret-position="216">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding>
-            <element signature="e#66#75#0" expanded="true" />
-            <element signature="e#441#857#0" />
-            <element signature="e#975#1678#0" />
-            <element signature="e#1719#2378#0" />
-            <element signature="e#2419#3062#0" />
-            <element signature="e#3098#3477#0" />
-            <element signature="e#3517#4914#0" />
-            <element signature="e#3841#4931#0" />
-            <element signature="e#4965#5112#0" />
-            <element signature="e#5172#6315#0" />
-            <element signature="e#6352#7671#0" />
-            <element signature="e#7715#9050#0" />
-            <element signature="e#9116#9667#0" />
-            <element signature="e#9706#9826#0" />
+            <element signature="e#5007#5441#0" />
+            <element signature="e#6488#8059#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Game_Sprite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        <state relative-caret-position="216">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#143#338#0" />
-            <element signature="e#381#683#0" />
-            <element signature="e#437#683#0" />
-            <element signature="e#520#902#0" />
-            <element signature="e#929#2027#0" />
-            <element signature="e#2074#3241#0" />
-            <element signature="e#3282#3696#0" />
-            <element signature="e#3734#4122#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game_Info.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="e#1214#2268#0" />
+            <element signature="e#381#719#0" />
+            <element signature="e#757#1139#0" />
+            <element signature="e#1166#2264#0" />
+            <element signature="e#2311#3478#0" />
+            <element signature="e#3519#3933#0" />
+            <element signature="e#3971#4359#0" />
           </folding>
         </state>
       </provider>

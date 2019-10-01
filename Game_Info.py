@@ -14,7 +14,7 @@ INPUT_RECT_HEIGHT = 100
 GAME_BLOOD_RECT = pygame.Rect(SCREEN_RECT.width / 2 - 250, SCREEN_RECT.height - 26, 500, 25)
 
 GAME_ICON = "image/rabbit.ico"
-GAME_BACKGROUND = "image/game_bg.gif"
+GAME_BACKGROUND = "image/game_bg.png"
 INPUT_BACKGROUND = "image/input_bg.png"
 SCORE_RECORD_FILE = "score_record.txt"
 

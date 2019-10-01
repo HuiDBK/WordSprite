@@ -8,6 +8,7 @@ Version: 1.1
 import os
 import sys
 import random
+
 import pyautogui as gui
 from Game_Sprite import *
 
@@ -15,8 +16,8 @@ pygame.init()
 
 # 获取电脑屏幕分辨率
 screen_width, screen_height = gui.size()
-game_x = (screen_width - Game_Info.SCREEN_RECT.width)/2
-game_y = (screen_height - Game_Info.SCREEN_RECT.height)/2
+game_x = (screen_width - Game_Info.SCREEN_RECT.width) / 2
+game_y = (screen_height - Game_Info.SCREEN_RECT.height) / 2
 # 设置游戏窗口相对电脑屏幕居中
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (game_x, game_y)
 
@@ -33,7 +34,9 @@ def parser_words():
         word_list = value.split(" ")
         words = [i for i in word_list if i != '']
         if len(words) >= 2:
-            english_words.append({"eng_word": words[0], "cn_comment": words[1]})
+            # 把解析好的单词和注释封装到字典中，然后加入列表
+            english_words.append(
+                {"eng_word": words[0], "cn_comment": words[1]})
     return english_words
 
 
@@ -53,10 +56,13 @@ class TypingGame(object):
         self.total_score = 0  # 记录游戏拼写成功了多少个单词
         self.score = [5]     # 把分数设置成数组方便把地址传递给单词精灵
         self.word_content = ""
+        self.backspace_state = False  # 键盘按下状态
+        self.backspace_count = 0
         # 绘制游戏能量
         self.__draw_game_blood()
         # 设置创建单词的定时器
-        pygame.time.set_timer(Game_Info.CREATE_WORD_EVENT, Game_Info.CREATE_WORD_INTERVAL)
+        pygame.time.set_timer(Game_Info.CREATE_WORD_EVENT,
+                              Game_Info.CREATE_WORD_INTERVAL)
 
         # 设置游戏标题和图标
         pygame.display.set_caption(Game_Info.GAME_NAME)
@@ -138,21 +144,39 @@ class TypingGame(object):
                         # 如果单词拼写成功再按下键盘时清空内容
                         self.word_content = ""
                         self.spell_ok = False
-                    # 记录键盘输入的字符
-                    self.word_content += pygame.key.name(event.key)
+                    # 控制单词长度
+                    if len(self.word_content) < 40:
+                        # 记录键盘输入的字符
+                        self.word_content += pygame.key.name(event.key)
+                    else:
+                        print("Word to long")
                     self.__reset_word_sprite_color()
                     print(self.word_content)
-                elif event.key == pygame.K_BACKSPACE:
-                    # 回删判断
-                    if self.word_content != "":
-                        self.word_content = self.word_content[:-1]
-                        print(self.word_content + "---" + str(len(self.word_content)))
-                        if len(self.word_content) == 0:
-                            self.__reset_word_sprite_color()
-                        if self.spell_ok:
-                            # 如果单词拼写成功再按下键盘回删键时清空内容
-                            self.word_content = ""
-                            self.spell_ok = False
+                    # self.__delete_words()
+                if event.key == pygame.K_BACKSPACE:
+                    self.backspace_state = True
+                    self.__delete_words()
+            elif event.type == pygame.KEYUP:
+                self.backspace_state = False
+                self.backspace_count = 0
+        # 实现长按backspace连续回删
+        if self.backspace_state:
+            self.backspace_count += 1
+            if self.backspace_count > 30:
+                self.__delete_words()
+
+    def __delete_words(self):
+        """单词回删"""
+        if self.word_content != "":
+            self.word_content = self.word_content[:-1]
+            print(self.word_content + "---" +
+                  str(len(self.word_content)))
+            if len(self.word_content) == 0:
+                self.__reset_word_sprite_color()
+            if self.spell_ok:
+                # 如果单词拼写成功再按下键盘回删键时清空内容
+                self.word_content = ""
+                self.spell_ok = False
 
     def __reset_word_sprite_color(self):
         """重置单词精灵的颜色"""
@@ -172,7 +196,8 @@ class TypingGame(object):
             cn_comment = self.words[index]["cn_comment"]
             # print(eng_word + "----" + cn_comment)
             word_sprite = WordSprite(eng_word, cn_comment)
-            word_x = random.randint(0, Game_Info.SCREEN_RECT.width - word_sprite.rect.width)
+            word_x = random.randint(
+                0, Game_Info.SCREEN_RECT.width - word_sprite.rect.width)
             word_y = -random.randint(0, int(Game_Info.SCREEN_RECT.height / 10))
             word_sprite.rect.x = word_x
             word_sprite.rect.bottom = word_y
@@ -191,29 +216,33 @@ class TypingGame(object):
                 break
 
     def __game_over(self):
-        if not os.path.exists(Game_Info.SCORE_RECORD_FILE):
-            # 只写模式打开文件，如果文件不存在会自动创建
-            file = open(Game_Info.SCORE_RECORD_FILE, mode='w')
-            file.close()
-        # 读写模式打开
-        score_file = open(Game_Info.SCORE_RECORD_FILE, mode='r+', encoding='utf-8')
-        # 读取出历史最高成绩
-        lines = score_file.readline()
-        if lines:
-            highest_score = int(lines.split(":")[1])
-            if self.total_score > highest_score:
-                # 首先先清空上次的最高纪录
-                score_file.seek(0)
-                score_file.truncate()
+        try:
+            if not os.path.exists(Game_Info.SCORE_RECORD_FILE):
+                # 只写模式打开文件，如果文件不存在会自动创建
+                file = open(Game_Info.SCORE_RECORD_FILE, mode='w')
+                file.close()
+            # 读写模式打开
+            score_file = open(Game_Info.SCORE_RECORD_FILE,
+                              mode='r+', encoding='utf-8')
+            # 读取出历史最高成绩
+            lines = score_file.readline()
+            if lines:
+                highest_score = int(lines.split(":")[1])
+                if self.total_score > highest_score:
+                    # 首先先清空上次的最高纪录
+                    score_file.seek(0)
+                    score_file.truncate()
+                    highest_score = self.total_score
+                    score_file.write("HighestScore:" + str(self.total_score))
+            else:
                 highest_score = self.total_score
-                score_file.write("HighestScore:"+str(self.total_score))
-        else:
-            highest_score = self.total_score
-            score_file.write("HighestScore:" + str(self.total_score))
-        score_file.close()
-        result = gui.confirm("Game"+" "*5+"Over\n\n"+"Score:" + str(self.total_score) + "\n\n" +
-                             "HighestScore:"+str(highest_score),
-                             "Game Over", buttons=["退出", "重玩"])
+                score_file.write("HighestScore:" + str(self.total_score))
+                score_file.close()
+            result = gui.confirm("Game" + " " * 5 + "Over\n\n" + "Score:" + str(self.total_score) + "\n\n" +
+                                 "HighestScore:" + str(highest_score),
+                                 "Game Over", buttons=["退出", "重玩"])
+        except Exception as file_e:
+            print(file_e)
         if result == "退出":
             pygame.quit()
             sys.exit()
@@ -232,7 +261,8 @@ class TypingGame(object):
             if self.word_content.lower() in word_sprite.word_text.lower() \
                     and len(self.word_content) >= 1 \
                     and self.word_content[0].lower() == word_sprite.word_text[0].lower():
-                word_sprite.set_word_color(word_sprite.word_text, Game_Info.PINK)
+                word_sprite.set_word_color(
+                    word_sprite.word_text, Game_Info.PINK)
                 if self.word_content.lower() == word_sprite.word_text.lower():
                     self.score[0] += 1
                     self.total_score += 1
@@ -246,11 +276,13 @@ class TypingGame(object):
                     for bomb in self.bombs:
                         if not bomb.visible:
                             # 爆炸对象设置爆炸位置
-                            bomb.set_pos(word_sprite.rect.x, word_sprite.rect.y)
+                            bomb.set_pos(word_sprite.rect.x,
+                                         word_sprite.rect.y)
                             # 爆炸对象状态设置为True
                             bomb.visible = True
                             break
-                    self.word_content = self.word_content + "\t" + str(word_sprite.cn_comment)
+                    self.word_content = self.word_content + \
+                        "\t" + str(word_sprite.cn_comment)
                     self.spell_ok = True
         pass
 
@@ -266,7 +298,8 @@ class TypingGame(object):
         pygame.draw.rect(self.screen, color,
                          pygame.Rect(Game_Info.GAME_BLOOD_RECT.x + 2, Game_Info.GAME_BLOOD_RECT.y,
                                      self.score[0] * 10, Game_Info.GAME_BLOOD_RECT.height))
-        pygame.draw.rect(self.screen, Game_Info.WHITE, Game_Info.GAME_BLOOD_RECT, 2)
+        pygame.draw.rect(self.screen, Game_Info.WHITE,
+                         Game_Info.GAME_BLOOD_RECT, 2)
 
     def __bomb_action(self):
         """开启爆炸动画"""
@@ -276,4 +309,7 @@ class TypingGame(object):
 
 
 if __name__ == '__main__':
-    TypingGame().start_game()
+    try:
+        TypingGame().start_game()
+    except Exception as e:
+        print(e)
