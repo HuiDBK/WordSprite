@@ -7,6 +7,7 @@ Version: 1.1
 import tkinter
 import pygame
 
+GAME_MUSIC = "image/卡农.mp3"
 GAME_NAME = "WordSprite"
 SCREEN_RECT = pygame.Rect(0, 0, 1200, 800)
 INPUT_RECT_WIDTH = 600

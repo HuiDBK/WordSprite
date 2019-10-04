@@ -13,6 +13,9 @@ import pyautogui as gui
 from Game_Sprite import *
 
 pygame.init()
+# 加载音乐
+pygame.mixer.init()
+pygame.mixer.music.load(Game_Info.GAME_MUSIC)
 
 # 获取电脑屏幕分辨率
 screen_width, screen_height = gui.size()
@@ -120,6 +123,10 @@ class TypingGame(object):
     def start_game(self):
         """打字游戏开启"""
         while True:
+            # 检查音乐流播放，有返回True，没有返回False
+            # 如果没有音乐流则选择播放
+            if not pygame.mixer.music.get_busy():
+                pygame.mixer.music.play()
             # 判断游戏结束
             if self.score[0] < 0:
                 self.__game_over()
