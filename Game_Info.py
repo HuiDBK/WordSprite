@@ -7,7 +7,7 @@ Version: 1.1
 import tkinter
 import pygame
 
-GAME_MUSIC = "image/卡农.mp3"
+GAME_MUSICS = ["image/卡农.mp3", "image/龙珠.mp3"]
 GAME_NAME = "WordSprite"
 SCREEN_RECT = pygame.Rect(0, 0, 1200, 800)
 INPUT_RECT_WIDTH = 600
@@ -45,6 +45,8 @@ PINK = pygame.color.Color("#ff4777")
 CREATE_WORD_EVENT = pygame.USEREVENT
 # 游戏结束事件
 GAME_OVER_EVENT = pygame.USEREVENT + 1
+# 游戏音乐结束事件
+MUSIC_END_EVENT = pygame.USEREVENT + 2
 
 
 class GameOverDialog(object):
