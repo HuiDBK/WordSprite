@@ -13,14 +13,18 @@ import pyautogui as gui
 from Game_Sprite import *
 
 pygame.init()
-# 加载音乐
 
 
 def random_music():
     """随机播放音乐"""
-    pygame.mixer.init()
-    pygame.mixer.music.load(random.choice(Game_Info.GAME_MUSICS))
-    pygame.mixer.music.play(loops=0)
+    try:
+        pygame.mixer.init()
+        pygame.mixer.music.load(random.choice(Game_Info.GAME_MUSICS))
+        pygame.mixer.music.play(loops=0)
+    except Exception as e:
+        print("无法加载音频设置，请检查电脑配置\t" + str(e))
+        # 打印异常行数
+        print("Line_Num:" + str(e.__traceback__.tb_lineno))
 
 
 random_music()
@@ -74,7 +78,13 @@ class TypingGame(object):
         # 设置创建单词的定时器
         pygame.time.set_timer(Game_Info.CREATE_WORD_EVENT,
                               Game_Info.CREATE_WORD_INTERVAL)
-
+        # 设置游戏音乐结束事件
+        try:
+            pygame.mixer.music.set_endevent(Game_Info.MUSIC_END_EVENT)
+        except Exception as e:
+            print("无法设置音乐结束事件\t" + str(e))
+            # 打印异常行数
+            print(str(e.__traceback__.tb_lineno))
         # 设置游戏标题和图标
         pygame.display.set_caption(Game_Info.GAME_NAME)
         pygame.display.set_icon(pygame.image.load(Game_Info.GAME_ICON))
@@ -144,12 +154,15 @@ class TypingGame(object):
 
     def __event_handle(self):
         for event in pygame.event.get():  # 遍历所有事件
+            try:
+                if pygame.mixer.music.get_endevent() == Game_Info.MUSIC_END_EVENT and not pygame.mixer.music.get_busy():
+                    # 如果music播放结束且没有音乐在播放就随机下一首
+                    print("下一首")
+                    random_music()
+            except Exception as e:
+                pass
             if event.type == pygame.QUIT:  # 如果单击关闭窗口，则退出
                 sys.exit()
-            elif pygame.mixer.music.get_endevent() == Game_Info.MUSIC_END_EVENT and not pygame.mixer.music.get_busy():
-                # 如果music播放结束且没有音乐在播放就随机下一首
-                print("下一首")
-                random_music()
             elif event.type == Game_Info.CREATE_WORD_EVENT:
                 self.__random_generate_word(word_num=3)
             elif event.type == pygame.KEYDOWN:
@@ -329,4 +342,5 @@ if __name__ == '__main__':
     try:
         TypingGame().start_game()
     except Exception as e:
-        print(e)
+        print("未知异常\t" + str(e))
+        print("Line_Num:" + str(e.__traceback__.tb_lineno))
