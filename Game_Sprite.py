@@ -17,6 +17,11 @@ class GameSprite(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.speed = speed
 
+    def set_pos(self, x, y):
+        """设置位置"""
+        self.rect.x = x
+        self.rect.y = y
+
 
 class BackGroundSprite(GameSprite):
     """背景精灵"""
@@ -95,33 +100,66 @@ class WordSprite(pygame.sprite.Sprite):
         super().__init__()
         self.word_text = word_text
         self.cn_comment = cn_comment
+        self.word_size = Game_Info.WORD_SIZE
+        self.word_color = pygame.color.Color(Game_Info.WORD_NORMAL_COLOR)
         # 创建系统字体
-        self.word_font = pygame.font.SysFont("simsunnsimsun", Game_Info.WORD_SIZE)
+        self.word_font = pygame.font.SysFont("simsunnsimsun", self.word_size)
         # 根据字体创建显示对象(文字)    render(self,text,antialias,color,background = None)
-        self.image = self.word_font.render(word_text, True, Game_Info.BLUE)
+        self.image = self.word_font.render(word_text, True, self.word_color)
         self.rect = self.image.get_rect()
         # 用小数存储单词降落的位置
         self.y = float(self.rect.y)
         self.speed = speed
-        pass
 
     def update(self, main_game):
         """垂直向下移动"""
         self.y += self.speed
         self.rect.y = self.y
-        if main_game.score[0] >= 50:
+        if main_game.game_blood >= 50:
             # 提高单词的降落速度
             self.speed = 2
         if self.rect.y >= Game_Info.SCREEN_RECT.height:
             self.kill()
-            main_game.score[0] -= 1
-            pass
-        pass
+            main_game.game_blood -= 1
 
-    def set_word_color(self, word_text, color, size=Game_Info.WORD_SIZE):
-        """设置文字的大小"""
+    def set_word_color(self, word_text, color=None, size=Game_Info.WORD_SIZE):
+        """设置文字和其颜色、大小"""
         self.word_font = pygame.font.SysFont("simsunnsimsun", size)
         self.image = self.word_font.render(word_text, True, color)
+
+    def set_color(self, color=None):
+        """设置颜色"""
+        self.word_color = color
+        self.image = self.word_font.render(self.word_text, True, self.word_color)
+
+    def set_font_size(self, size):
+        """设置文字的大小"""
+        self.word_size = size
+        self.word_font = pygame.font.SysFont("simsunnsimsun", self.word_size)
+        self.image = self.word_font.render(self.word_text, True, self.word_color)
+        new_rect = self.image.get_rect()
+        self.rect = pygame.Rect(self.rect.x, self.rect.y, new_rect.width, new_rect.height)
+    def set_text(self, display_text):
+        """设置显示文本"""
+        self.word_text = display_text
+        self.image = self.word_font.render(self.word_text, True, self.word_color)
+
+    color = property(None, set_color)
+    size = property(None, set_font_size)
+    display_text = property(None, set_text)
+
+    def set_pos(self, x, y):
+        """设置位置"""
+        self.rect.x = x
+        self.rect.y = y
+
+
+class TextSprite(WordSprite):
+    def __init__(self, display_text):
+        super().__init__(display_text, speed=0)
+
+    def update(self):
+        pass
 
 
 class ShowTextSprite(WordSprite):
