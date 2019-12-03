@@ -9,8 +9,8 @@ import os
 import sys
 import random
 import traceback
-import colorsys
 import multiprocessing
+from tkinter import colorchooser
 
 import pyautogui as gui
 import PySimpleGUI as sg
@@ -87,26 +87,6 @@ class GameSetWin(object):
         game_level_num = self.game_level_dict[int(self.Game_Info['GAME_LEVEL'])]["game_level_num"]
         game_level_text = self.game_level_dict[int(self.Game_Info['GAME_LEVEL'])]["game_level_text"]
         game_level_color = self.game_level_dict[int(self.Game_Info['GAME_LEVEL'])]["game_level_color"]
-        # if int(Game_Info.game_conf.game_level) == 1:
-        #     game_level_num = 5
-        #     game_level_text = u'简单'
-        #     game_level_color = 'green'
-        # elif int(Game_Info.game_conf.game_level) == 2:
-        #     game_level_num = 15
-        #     game_level_text = u'上手'
-        #     game_level_color = 'blue'
-        # elif int(Game_Info.game_conf.game_level) == 3:
-        #     game_level_num = 25
-        #     game_level_text = u'中等'
-        #     game_level_color = 'orange'
-        # elif int(Game_Info.game_conf.game_level) == 4:
-        #     game_level_num = 35
-        #     game_level_text = u'困难'
-        #     game_level_color = 'red'
-        # elif int(Game_Info.game_conf.game_level) == 5:
-        #     game_level_num = 50
-        #     game_level_text = u'魔鬼'
-        #     game_level_color = 'purple'
         self.layout = [
             [
                 sg.Text(u'游戏难度等级:', text_color=self.text_color, background_color=self.bg_color),
@@ -134,14 +114,14 @@ class GameSetWin(object):
             [
                 sg.Text(u'游戏字体颜色:', text_color=self.text_color, background_color=self.bg_color),
                 sg.Text('', size=(17, 1), background_color=self.Game_Info['WORD_NORMAL_COLOR'],
-                        key='word_normal_color'),
-                sg.ColorChooserButton(u'颜色选择', key='normal_ccb')
+                        enable_events=True, key='word_normal_color'),
+                sg.Button(u'颜色选择', key='normal_ccb')
             ],
             [
                 sg.Text(u'单词拼写颜色:', text_color=self.text_color, background_color=self.bg_color),
                 sg.Text('', size=(17, 1), background_color=self.Game_Info['SPELL_OK_COLOR'],
-                        key='spell_ok_color'),
-                sg.ColorChooserButton(u'颜色选择', key='spell_ccb')
+                        enable_events=True, key='spell_ok_color'),
+                sg.Button(u'颜色选择', key='spell_ccb')
             ],
             [
                 sg.Submit(u'暂时保存', key='temp_save', pad=((10, 350), (0, 0))),
@@ -152,13 +132,18 @@ class GameSetWin(object):
     def start(self):
         """开启游戏配置界面"""
         self.window = sg.Window(title=self.title, layout=self.layout, element_padding=(10, 30),
-                                font=('宋体', 18), background_color=self.bg_color, keep_on_top=True)
+                                font=('宋体', 18), background_color=self.bg_color)
         # 开启事件监听
         self.__event_handler()
 
+    @staticmethod
+    def color_callback(color=None):
+        """颜色按钮回调方法"""
+        return colorchooser.askcolor(color)
+
     def __event_handler(self):
         while True:
-            event, value_dict = self.window.read(timeout=10)
+            event, value_dict = self.window.read(timeout=20)
             print(event, value_dict)
             if event in (None, 'Quit'):
                 self.game_queue.put({"result": "quit", "type": 'quit'})
@@ -168,16 +153,6 @@ class GameSetWin(object):
                 game_level_text = self.game_level_dict[game_level]['game_level_text']
                 game_level_color = self.game_level_dict[game_level]['game_level_color']
                 self.window.find_element('game_level_btn').update(game_level_text, button_color=(self.text_color, game_level_color))
-                # if int(game_level_num) <= 10:
-                #     self.window.find_element('game_level_btn').update(u'简单', button_color=(self.text_color, 'green'))
-                # elif int(game_level_num) <= 20:
-                #     self.window.find_element('game_level_btn').update(u'上手', button_color=(self.text_color, 'blue'))
-                # elif int(game_level_num) <= 30:
-                #     self.window.find_element('game_level_btn').update(u'中等', button_color=(self.text_color, 'orange'))
-                # elif int(game_level_num) <= 40:
-                #     self.window.find_element('game_level_btn').update(u'困难', button_color=(self.text_color, 'red'))
-                # elif int(game_level_num) <= 50:
-                #     self.window.find_element('game_level_btn').update(u'魔鬼', button_color=(self.text_color, 'purple'))
             elif event in 'game_level_btn':
                 # 点击按钮切换游戏等级
                 game_level = self.get_game_level(int(value_dict['game_level']))
@@ -188,46 +163,44 @@ class GameSetWin(object):
                 game_level_color = self.game_level_dict[game_level+1]['game_level_color']
 
                 self.window.find_element('game_level').update(game_level_num)
-                self.window.find_element('game_level_btn').update(game_level_text, button_color=(self.text_color, game_level_color))
-
-                # if int(game_level_num) <= 10:
-                #     self.window.find_element('game_level').update(15)
-                #     self.window.find_element('game_level_btn').update(u'上手', button_color=(self.text_color, 'blue'))
-                # elif int(game_level_num) <= 20:
-                #     self.window.find_element('game_level').update(25)
-                #     self.window.find_element('game_level_btn').update(u'中等', button_color=(self.text_color, 'orange'))
-                # elif int(game_level_num) <= 30:
-                #     self.window.find_element('game_level').update(35)
-                #     self.window.find_element('game_level_btn').update(u'困难', button_color=(self.text_color, 'red'))
-                # elif int(game_level_num) <= 40:
-                #     self.window.find_element('game_level').update(50)
-                #     self.window.find_element('game_level_btn').update(u'魔鬼', button_color=(self.text_color, 'purple'))
-                # elif int(game_level_num) <= 50:
-                #     self.window.find_element('game_level').update(5)
-                #     self.window.find_element('game_level_btn').update(u'简单', button_color=(self.text_color, 'green'))
+                self.window.find_element('game_level_btn').update(game_level_text,
+                                                                  button_color=(self.text_color, game_level_color))
             elif event in 'word_size':
                 word_size_num = value_dict[event]
                 self.window.find_element('word_size_num').update(word_size_num)
             elif event in 'init_blood':
                 blood_num = int(value_dict[event])
                 self.window.find_element('blood_num').update(str(blood_num))
-            elif event in 'temp_save':
+            elif event in 'normal_ccb':
+                # 游戏单词颜色选择
+                self.window.Disable()   # 让游戏配置窗口不可用，不让用户乱点击，防止多开
+                choose_colors = self.color_callback(self.Game_Info['WORD_NORMAL_COLOR'])
+                self.window.Enable()  # 恢复游戏配置窗口
+                if None not in choose_colors:
+                    self.window.find_element('word_normal_color').update(background_color=choose_colors[1])
+                    self.Game_Info['WORD_NORMAL_COLOR'] = choose_colors[1]
+            elif event in 'spell_ccb':
+                # 单词拼写颜色选择
+                self.window.Disable()  # 让游戏配置窗口不可用，不让用户乱点击，防止多开
+                choose_colors = self.color_callback(self.Game_Info['SPELL_OK_COLOR'])
+                self.window.Enable()  # 恢复游戏配置窗口
+                if None not in choose_colors:
+                    self.window.find_element('spell_ok_color').update(background_color=choose_colors[1])
+                    self.Game_Info['SPELL_OK_COLOR'] = choose_colors[1]
+            elif event in ('temp_save', 'permanent'):
+                word_normal_color = self.Game_Info['WORD_NORMAL_COLOR']
+                spell_ok_color = self.Game_Info['SPELL_OK_COLOR']
                 game_level = self.get_game_level(int(value_dict['game_level']))
                 value_dict['game_level'] = game_level
-                self.game_queue.put({"result": value_dict, "type": 'temp_save'})
+                value_dict['normal_ccb'] = word_normal_color
+                value_dict['spell_ccb'] = spell_ok_color
+                if event in 'temp_save':
+                    print(value_dict)
+                    self.game_queue.put({"result": value_dict, "type": 'temp_save'})
+                    print(value_dict)
+                elif event in 'permanent':
+                    self.game_queue.put({"result": value_dict, "type": 'permanent'})
                 break
-            elif event in 'permanent':
-                game_level = self.get_game_level(int(value_dict['game_level']))
-                value_dict['game_level'] = game_level
-                self.game_queue.put({"result": value_dict, "type": 'permanent'})
-                break
-            # 颜色选择
-            if value_dict['normal_ccb']:
-                normal_word_color = value_dict['normal_ccb']
-                self.window.find_element('word_normal_color').update(background_color=normal_word_color)
-            if value_dict['spell_ccb']:
-                spell_ok_color = value_dict['spell_ccb']
-                self.window.find_element('spell_ok_color').update(background_color=spell_ok_color)
         self.window.close()
         sg.quit()
         multiprocessing.current_process().close()
@@ -692,7 +665,14 @@ class TypingGame(object):
 def main():
     random_music()
     TypingGame().start_game()
-    # GameSetWin("游戏配置", None).start()
+    # game_info_dict = {
+    #     "GAME_LEVEL": Game_Info.game_conf.game_level,
+    #     "WORD_SIZE": Game_Info.WORD_SIZE,
+    #     "INIT_BLOOD": Game_Info.INIT_BLOOD,
+    #     "WORD_NORMAL_COLOR": Game_Info.WORD_NORMAL_COLOR,
+    #     'SPELL_OK_COLOR': Game_Info.SPELL_OK_COLOR
+    # }
+    # GameSetWin("游戏配置", None, game_info_dict).start()
 
 
 if __name__ == '__main__':

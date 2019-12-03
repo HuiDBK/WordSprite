@@ -131,6 +131,8 @@ class WordSprite(pygame.sprite.Sprite):
         """设置颜色"""
         self.word_color = color
         self.image = self.word_font.render(self.word_text, True, self.word_color)
+        new_rect = self.image.get_rect()
+        self.rect = pygame.Rect(self.rect.x, self.rect.y, new_rect.width, new_rect.height)
 
     def set_font_size(self, size):
         """设置文字的大小"""
@@ -139,6 +141,7 @@ class WordSprite(pygame.sprite.Sprite):
         self.image = self.word_font.render(self.word_text, True, self.word_color)
         new_rect = self.image.get_rect()
         self.rect = pygame.Rect(self.rect.x, self.rect.y, new_rect.width, new_rect.height)
+
     def set_text(self, display_text):
         """设置显示文本"""
         self.word_text = display_text
@@ -171,7 +174,7 @@ class ShowTextSprite(WordSprite):
         self.rect.y = 50
 
     def update(self, word_text):
-        super().set_word_color(word_text, Game_Info.PINK)
+        super().set_word_color(word_text, pygame.color.Color(Game_Info.SPELL_OK_COLOR))
         self.rect = self.image.get_rect()
         self.rect.x = Game_Info.SCREEN_RECT.width / 2 - self.rect.width / 2
         self.rect.y = 50
