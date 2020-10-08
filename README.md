@@ -101,11 +101,11 @@
 
 #### 第三方库说明
 
-**pygame：**用于绘制英文打字游戏运行窗口，整体实现游戏动画效果。
+**pygame：** 用于绘制英文打字游戏运行窗口，整体实现游戏动画效果。
 
-**pyinstaller：**把项目打包成可执行文件(**.exe**)，可在 **Windows** 环境下运行程序，无需 **Python** 环境。
+**pyinstaller：** 把项目打包成可执行文件(**.exe**)，可在 **Windows** 环境下运行程序，无需 **Python** 环境。
 
-**PySimpleGUI：**绘制游戏整体交互窗口（开始、设置、历史最高窗口）。
+**PySimpleGUI：** 绘制游戏整体交互窗口（开始、设置、历史最高窗口）。
 
 <br/>
 
@@ -187,7 +187,7 @@ WordSprite
 
 ### 游戏设置界面
 
-<img src="https://img-blog.csdnimg.cn/20201007234521253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI5ODU3,size_16,color_FFFFFF,t_70#pic_center" alt="游戏设置界面" title="游戏设置界面" style="zoom:67%;" />
+![游戏设置界面](https://images.gitee.com/uploads/images/2020/1008/194124_647096c5_4986021.png '游戏设置界面')
 
 
 
