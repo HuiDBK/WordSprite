@@ -2,55 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef70815b-c71f-4132-afdf-53dfd01536d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Typing_Game.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Typing_Game.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game_Sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game_Sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/Typing_Games_Main.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/english_word.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/003.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/004.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/005.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/006.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/007.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/game_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/game_bg_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/game_bg_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/input_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/rabbit.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/卡农.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypingGame/image/龙珠.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Typing_Games_Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Typing_Games_Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/config.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game_Info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game_Sprite.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Typing_Games_Main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document/TypingGame说明.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_word.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/game_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/game_bg3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/game_bg_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/game_over.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/input_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/rabbit.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/set_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/set_pink.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/卡农.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/龙珠.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Game_Info.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-              <folding>
-                <element signature="e#66#85#0" expanded="true" />
-                <element signature="e#133#2469#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,71 +46,15 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>；</find>
-      <find>yu</find>
-      <find>__che</find>
-      <find>game</find>
-      <find>a.m</find>
-      <find>am</find>
-      <find>upda</find>
-      <find>__game</find>
-      <find>__g</find>
-      <find>__game_over</find>
-      <find>__event</find>
-      <find>__ga</find>
-      <find>__game_s</find>
-      <find>game_conf</find>
-      <find>score</find>
-      <find>self.score</find>
-      <find>__game_set</find>
-      <find>start</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/001.txt" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/english_word.txt" />
-        <option value="$PROJECT_DIR$/config.cfg" />
-        <option value="$PROJECT_DIR$/Game_Info.py" />
-        <option value="$PROJECT_DIR$/Typing_Games_Main.py" />
-        <option value="$PROJECT_DIR$/Game_Sprite.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-90" />
-    <option name="y" value="220" />
-    <option name="width" value="1400" />
-    <option name="height" value="820" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Typing_Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Typing_Game" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="1aaNeGMnTWfPrMnhVOy73SIu4WY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -131,31 +62,26 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Tools\Python\workplace\Typing_Game\resource\image" />
+      <recent name="D:\Tools\Python\workplace\Typing_Game\resource\image\animation" />
+      <recent name="D:\Tools\Python\workplace\Typing_Game\resource\font" />
       <recent name="D:\Tools\Python\workplace\Typing_Game" />
       <recent name="D:\Tools\Python\workplace\Typing_Game\image" />
-      <recent name="D:\Tools\Python\workplace\Typing_Game\document" />
-      <recent name="D:\HUI\Python\WorkPlace\Typing_Game" />
-      <recent name="D:\HUI\Python\WorkPlace\Typing_Game\image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Tools\Python\workplace\Typing_Game\resource\image" />
+      <recent name="D:\Tools\Python\workplace\Typing_Game\resource" />
+      <recent name="D:\Tools\Python\workplace\Typing_Game\res" />
+      <recent name="D:\Tools\Python\workplace\Typing_Game" />
+      <recent name="D:\Tools\Python\workplace\Typing_Game\image\music" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.Typing_Games_Main">
-    <configuration name="Game_Info" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Game_Main">
+    <configuration name="Game_Info (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Typing_Game" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -177,7 +103,51 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Game_Sprite" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Game_Main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Typing_Game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Game_Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Game_Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Typing_Game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/Game_Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Game_Sprite" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Typing_Game" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -199,6 +169,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Game_View" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Typing_Game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Game_View.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Typing_Games_Main" type="PythonConfigurationType" factoryName="Python">
       <module name="Typing_Game" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,7 +204,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Typing_Games_Main.py" />
+      <option name="SCRIPT_NAME" value="D:\Tools\Python\workplace\Typing_Game\Game_Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -223,15 +215,33 @@
     </configuration>
     <list>
       <item itemvalue="Python.Typing_Games_Main" />
+      <item itemvalue="Python.Game_Info (1)" />
+      <item itemvalue="Python.Game_View" />
+      <item itemvalue="Python.Game_Main (1)" />
       <item itemvalue="Python.Game_Sprite" />
-      <item itemvalue="Python.Game_Info" />
+      <item itemvalue="Python.Game_Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Game_Info" />
+        <item itemvalue="Python.Game_Main" />
+        <item itemvalue="Python.Game_Main (1)" />
+        <item itemvalue="Python.Game_Info (1)" />
+        <item itemvalue="Python.Game_View" />
         <item itemvalue="Python.Game_Sprite" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -270,11 +280,31 @@
       <workItem from="1575245255470" duration="900000" />
       <workItem from="1575294411323" duration="692000" />
       <workItem from="1575382763893" duration="8171000" />
+      <workItem from="1575554499224" duration="1108000" />
+      <workItem from="1575905021792" duration="1220000" />
+      <workItem from="1576242028301" duration="208000" />
+      <workItem from="1586969839988" duration="534000" />
+      <workItem from="1587371348081" duration="107000" />
+      <workItem from="1589720239994" duration="2267000" />
+      <workItem from="1595743543624" duration="21850000" />
+      <workItem from="1595819332618" duration="16462000" />
+      <workItem from="1596026945367" duration="152000" />
+      <workItem from="1600219768796" duration="2045000" />
+      <workItem from="1600575775731" duration="8626000" />
+      <workItem from="1601379394237" duration="171000" />
+      <workItem from="1601517864334" duration="2672000" />
+      <workItem from="1601549711048" duration="10353000" />
+      <workItem from="1601647346662" duration="11152000" />
+      <workItem from="1601696928012" duration="11709000" />
+      <workItem from="1601816520167" duration="10886000" />
+      <workItem from="1601876857003" duration="37759000" />
+      <workItem from="1601960352136" duration="39887000" />
+      <workItem from="1602039335191" duration="28437000" />
+      <workItem from="1602073466087" duration="5317000" />
+      <workItem from="1602089721248" duration="3227000" />
+      <workItem from="1602143718382" duration="7007000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174786000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -285,172 +315,69 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2077748" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27053824" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" order="4" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Typing_Game$Typing_Games_Main.coverage" NAME="Typing_Games_Main Coverage Results" MODIFIED="1575389577173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Typing_Game$Game_Info.coverage" NAME="Game_Info Coverage Results" MODIFIED="1575194481504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Typing_Game$Game_Sprite.coverage" NAME="Game_Sprite Coverage Results" MODIFIED="1569332553769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  <component name="WindowStateProjectService">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1596027095650">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596027095650" />
+    <state width="1493" height="167" key="GridCell.Tab.0.bottom" timestamp="1602089422627">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602089422627" />
+    <state width="1877" height="150" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595773447091" />
+    <state width="1493" height="167" key="GridCell.Tab.0.center" timestamp="1602089422627">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="167" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602089422627" />
+    <state width="1877" height="150" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595773447091" />
+    <state width="1493" height="167" key="GridCell.Tab.0.left" timestamp="1602089422627">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="167" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602089422627" />
+    <state width="1877" height="150" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595773447091" />
+    <state width="1493" height="167" key="GridCell.Tab.0.right" timestamp="1602089422627">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="167" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602089422627" />
+    <state width="1877" height="150" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595773447091" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1602004021052">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602004021052" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1602004021052">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602004021052" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1602004021052">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602004021052" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1602004021052">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602004021052" />
+    <state x="46" y="0" key="SettingsEditor" timestamp="1602082201755">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="46" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602082201755" />
+    <state x="449" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1602143725245">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1602143725245" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/1167810983/pygame/event.py" />
-    <entry file="file://$PROJECT_DIR$/001.txt" />
-    <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$USER_HOME$/Lib/site-packages/pygame/sprite.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1385555194/builtins.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1385555194/pygame/color.py" />
-    <entry file="file://$USER_HOME$/Lib/site-packages/pymsgbox/__init__.py" />
-    <entry file="file://$USER_HOME$/Lib/site-packages/pyautogui/__init__.py" />
-    <entry file="file://$USER_HOME$/Lib/tkinter/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/image/game_bg.jpg" />
-    <entry file="file://$PROJECT_DIR$/image/white_rect.PNG" />
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1385555194/pygame/key.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/game_bg_2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/game_bg3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/game_bg.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Lib/site-packages/pygame/sprite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="452" column="8" selection-start-line="452" selection-start-column="8" selection-end-line="452" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/score_record.txt" />
-    <entry file="file://$PROJECT_DIR$/../../Lib/configparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-332">
-          <caret line="902" column="47" lean-forward="true" selection-start-line="902" selection-start-column="24" selection-end-line="902" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/english_word.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Lib/subprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="649" column="8" selection-start-line="649" selection-start-column="8" selection-end-line="649" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/multiprocessing/__init__.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Lib/multiprocessing/queues.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="67" column="36" lean-forward="true" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Lib/site-packages/PySimpleGUI/PySimpleGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="5042" column="117" selection-start-line="5042" selection-start-column="38" selection-end-line="5042" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Typing_Games_Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#66#75#0" expanded="true" />
-            <element signature="e#274#526#0" />
-            <element signature="e#807#1278#0" />
-            <element signature="e#2059#2229#0" />
-            <element signature="e#6365#6442#0" />
-            <element signature="e#5845#6208#0" />
-            <element signature="e#6269#6908#0" />
-            <element signature="e#8171#8284#0" />
-            <element signature="e#7331#7774#0" />
-            <element signature="e#7830#8263#0" />
-            <element signature="e#11081#11379#0" />
-            <element signature="e#11412#28966#0" />
-            <element signature="e#15620#16129#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game_Sprite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="e#66#79#0" expanded="true" />
-            <element signature="e#2408#4611#0" />
-            <element signature="e#2509#3098#0" />
-            <element signature="e#3141#3419#0" />
-            <element signature="e#4648#4765#0" />
-            <element signature="e#4806#5220#0" />
-            <element signature="e#5258#5646#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game_Info.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-          <folding>
-            <element signature="e#66#85#0" expanded="true" />
-            <element signature="e#133#2469#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/WordSprite$Game_Main__1_.coverage" NAME="Game_Main (1) Coverage Results" MODIFIED="1602074514250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$test.coverage" NAME="test Coverage Results" MODIFIED="1601824598843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Game_View.coverage" NAME="Game_View Coverage Results" MODIFIED="1602048907179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Typing_Games_Main.coverage" NAME="Typing_Games_Main Coverage Results" MODIFIED="1595748095166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WordSprite$Game_Main.coverage" NAME="Game_Main Coverage Results" MODIFIED="1602082213017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Games_Main.coverage" NAME="Games_Main Coverage Results" MODIFIED="1595774771210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Game_Main__1_.coverage" NAME="Game_Main (1) Coverage Results" MODIFIED="1602070745657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Game_Sprite.coverage" NAME="Game_Sprite Coverage Results" MODIFIED="1602041229474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Game_Info.coverage" NAME="Game_Info Coverage Results" MODIFIED="1595745615239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Game_Info__1_.coverage" NAME="Game_Info (1) Coverage Results" MODIFIED="1602058552972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
