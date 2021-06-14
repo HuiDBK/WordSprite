@@ -2,37 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef70815b-c71f-4132-afdf-53dfd01536d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Typing_Game.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Typing_Game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Typing_Game.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game_Info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game_Sprite.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Typing_Games_Main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document/TypingGame说明.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_word.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/003.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/004.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/005.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/006.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/007.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/game_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/game_bg3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/game_bg_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/game_over.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/input_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/rabbit.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/set_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/set_pink.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/卡农.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/龙珠.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/READM.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/resource/config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/bin/resource/config.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Game_View.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/Game_View.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,20 +24,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="36d9e572-82df-4201-84e2-17f6fe4981fd" />
   <component name="ProjectId" id="1aaNeGMnTWfPrMnhVOy73SIu4WY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/source" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -80,7 +57,7 @@
       <recent name="D:\Tools\Python\workplace\Typing_Game\image\music" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Game_Main">
+  <component name="RunManager" selected="Python.Game_Main (1)">
     <configuration name="Game_Info (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Typing_Game" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -231,18 +208,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -303,6 +269,8 @@
       <workItem from="1602073466087" duration="5317000" />
       <workItem from="1602089721248" duration="3227000" />
       <workItem from="1602143718382" duration="7007000" />
+      <workItem from="1602159068083" duration="93000" />
+      <workItem from="1617521138890" duration="395000" />
     </task>
     <servers />
   </component>
@@ -316,68 +284,44 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1596027095650">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1617521537019">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596027095650" />
-    <state width="1493" height="167" key="GridCell.Tab.0.bottom" timestamp="1602089422627">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1617521537019" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1617521538363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602089422627" />
-    <state width="1877" height="150" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595773447091" />
-    <state width="1493" height="167" key="GridCell.Tab.0.center" timestamp="1602089422627">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617521538363" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1617521538363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602089422627" />
-    <state width="1877" height="150" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595773447091" />
-    <state width="1493" height="167" key="GridCell.Tab.0.left" timestamp="1602089422627">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617521538363" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1617521538363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602089422627" />
-    <state width="1877" height="150" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595773447091" />
-    <state width="1493" height="167" key="GridCell.Tab.0.right" timestamp="1602089422627">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617521538363" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1617521538363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602089422627" />
-    <state width="1877" height="150" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595773447091" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1602004021052">
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617521538363" />
+    <state x="270" y="57" key="SettingsEditor" timestamp="1617521515712">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602004021052" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1602004021052">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602004021052" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1602004021052">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602004021052" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1602004021052">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602004021052" />
-    <state x="46" y="0" key="SettingsEditor" timestamp="1602082201755">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="46" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602082201755" />
-    <state x="449" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1602143725245">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="449" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1602143725245" />
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1617521515712" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WordSprite$Game_Main__1_.coverage" NAME="Game_Main (1) Coverage Results" MODIFIED="1602074514250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Typing_Game$test.coverage" NAME="test Coverage Results" MODIFIED="1601824598843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Typing_Game$Game_View.coverage" NAME="Game_View Coverage Results" MODIFIED="1602048907179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Typing_Game$Typing_Games_Main.coverage" NAME="Typing_Games_Main Coverage Results" MODIFIED="1595748095166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/WordSprite$Game_Main.coverage" NAME="Game_Main Coverage Results" MODIFIED="1602082213017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
-    <SUITE FILE_PATH="coverage/Typing_Game$Games_Main.coverage" NAME="Games_Main Coverage Results" MODIFIED="1595774771210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Typing_Game$Game_Main__1_.coverage" NAME="Game_Main (1) Coverage Results" MODIFIED="1602070745657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Typing_Game$Game_Sprite.coverage" NAME="Game_Sprite Coverage Results" MODIFIED="1602041229474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Typing_Game$Game_Info.coverage" NAME="Game_Info Coverage Results" MODIFIED="1595745615239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Typing_Game$Game_Info__1_.coverage" NAME="Game_Info (1) Coverage Results" MODIFIED="1602058552972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Game_View.coverage" NAME="Game_View Coverage Results" MODIFIED="1602048907179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Game_Info.coverage" NAME="Game_Info Coverage Results" MODIFIED="1595745615239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WordSprite$Game_Main__1_.coverage" NAME="Game_Main (1) Coverage Results" MODIFIED="1602074514250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Games_Main.coverage" NAME="Games_Main Coverage Results" MODIFIED="1595774771210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WordSprite$Game_Main.coverage" NAME="Game_Main Coverage Results" MODIFIED="1617521403281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Typing_Games_Main.coverage" NAME="Typing_Games_Main Coverage Results" MODIFIED="1595748095166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Typing_Game$Game_Main__1_.coverage" NAME="Game_Main (1) Coverage Results" MODIFIED="1602070745657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
