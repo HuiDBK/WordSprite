@@ -1,8 +1,8 @@
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
 """
 Author: Hui
-Description: {游戏视图模块}
+Description: { 游戏视图模块 }
 """
 import Game_Info
 import threading
@@ -181,7 +181,7 @@ class GameSetWin(BaseWin):
         self.parent_win = parent_win
         self.word_normal_color = self.game_conf.word_normal_color
         self.spell_ok_color = self.game_conf.spell_ok_color
-        self.__init_layout()+
+        self.__init_layout()
 
     def __init_layout(self):
         game_level_num = self.game_level_dict[int(self.game_conf.game_level)]["game_level_num"]

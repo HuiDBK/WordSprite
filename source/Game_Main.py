@@ -1,12 +1,13 @@
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
 """
 Author: Hui
-Description: {英文打字小游戏主入口模块}
+Description: { 英文打字小游戏主入口模块 }
 """
 import os
 import sys
 import time
+import json
 import traceback
 import Game_View
 from Game_View import *
@@ -14,10 +15,12 @@ from Game_Sprite import *
 
 
 def center_pos():
-    """设置游戏窗口相对电脑屏幕居中"""
+    """
+    设置游戏窗口相对电脑屏幕居中
+    """
     game_x = (Game_Info.SCREEN_X - Game_Info.SCREEN_RECT.width) / 2
     game_y = (Game_Info.SCREEN_Y - Game_Info.SCREEN_RECT.height) / 2
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (game_x, game_y)
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d, %d" % (game_x, game_y)
 
 
 def random_music():
@@ -36,45 +39,29 @@ def random_music():
         pygame.mixer_music.set_volume(0)
 
 
-def parser_words() -> dict:
-    """
-    解析英语单词
-    :return {"eng_word": val, "cn_comment": val}
-    """
-    english_words = []
-    word_contents = open(Game_Info.GAME_WORD_TEXT, encoding="gbk")
-    for value in word_contents:
-        value = value.lstrip()
-        word_list = value.split(" ")
-        words = [i for i in word_list if i != '']
-        if len(words) >= 2:
-            # 把解析好的单词和注释封装到字典中，然后加入列表
-            english_words.append(
-                {"eng_word": words[0], "cn_comment": words[1]})
-    return english_words
-
-
 class TypingGame(object):
-    """打字游戏主类"""
+    """打字小游戏主类"""
 
-    spell_ok = False            # 用于标识单词拼写成功
-    game_pause_flag = False     # 游戏暂停标志
-    game_over_flag = False      # 游戏结束标志
-    game_quit_flag = False      # 游戏退出标志
+    spell_ok = False  # 用于标识单词拼写成功
+    game_pause_flag = False  # 游戏暂停标志
+    game_over_flag = False  # 游戏结束标志
+    game_quit_flag = False  # 游戏退出标志
     game_total_blood = Game_Info.GAME_BLOOD_RECT.width  # 游戏总能量(血条)
 
     # 游戏等级对照字典
     game_level_dict = {
-        1: {"word_fall_speed": 0.3, "level_text": u"简单", "level_color": "green"},
-        2: {"word_fall_speed": 0.5, "level_text": u"上手", "level_color": "blue"},
-        3: {"word_fall_speed": 1.0, "level_text": u"中等", "level_color": "orange"},
-        4: {"word_fall_speed": 1.5, "level_text": u"困难", "level_color": "red"},
-        5: {"word_fall_speed": 2.0, "level_text": u"魔鬼", "level_color": "purple"}
+        1: {"word_fall_speed": 0.3, "level_text": "简单", "level_color": "green"},
+        2: {"word_fall_speed": 0.5, "level_text": "上手", "level_color": "blue"},
+        3: {"word_fall_speed": 1.0, "level_text": "中等", "level_color": "orange"},
+        4: {"word_fall_speed": 1.5, "level_text": "困难", "level_color": "red"},
+        5: {"word_fall_speed": 2.0, "level_text": "魔鬼", "level_color": "purple"}
     }
 
     @staticmethod
     def game_init():
         """游戏初始化"""
+        pygame.init()
+
         # 初始化游戏字体
         pygame.font.init()
 
@@ -95,14 +82,34 @@ class TypingGame(object):
             print("无法设置音乐结束事件\t" + str(e))
             print(traceback.format_exc())
 
+    @staticmethod
+    def load_words() -> dict:
+        """
+        加载英语单词
+        return:
+        {
+            "CET4": [
+                {
+                  "eng_word": "a",
+                  "cn_comment": "art.一(个);每一(个)"
+                },
+                ...
+            ]
+        }
+        """
+        with open(Game_Info.GAME_WORD_JSON, "r", encoding="utf-8") as file:
+            word_json = file.read()
+            word_dict = json.loads(word_json)
+        return word_dict
+
     def __init__(self):
-        self.words = parser_words()
-        self.game_conf = GameConfig()                   # 游戏配置信息
-        self.game_default_voice = 20                    # 游戏默认音量
-        self.use_time = 0                               # 记录游戏使用的时间
-        self.total_score = 0                            # 记录游戏拼写成功了多少个单词
-        self.word_content = ""                          # 键盘输入的单词
-        self.backspace_count = 0                        # 回删键按下的次数
+        self.words = self.load_words().get("CET4")
+        self.game_conf = GameConfig()  # 游戏配置信息
+        self.game_default_voice = 20  # 游戏默认音量
+        self.use_time = 0  # 记录游戏使用的时间
+        self.total_score = 0  # 记录游戏拼写成功了多少个单词
+        self.word_content = ""  # 记录键盘输入的单词
+        self.backspace_count = 0  # 回删键按下的次数
 
         # 预先创建动画对象
         self.animates = [Animation(self) for _ in range(5)]
@@ -113,8 +120,8 @@ class TypingGame(object):
         self.screen = pygame.display.set_mode(Game_Info.SCREEN_RECT.size)
 
         self.game_init()
-        self.set_game_event()       # 设置游戏事件
-        self.__create_sprite()      # 创建游戏精灵
+        self.set_game_event()  # 设置游戏事件
+        self.__create_sprite()  # 创建游戏精灵
 
     def __create_sprite(self):
         """创建精灵和精灵组"""
@@ -450,12 +457,15 @@ class TypingGame(object):
             # 检查新单词精灵是否与单词精灵组中的精灵碰撞(重叠)
             words = pygame.sprite.spritecollide(
                 word_sprite, self.word_group, False,
-                pygame.sprite.collide_circle_ratio(1)
             )
+
+            is_collide = pygame.sprite.spritecollideany(word_sprite, self.word_group)
+            print("碰撞", is_collide)
 
             # 碰撞(释放内存重新随机生成单词精灵)
             if len(words) > 0:
                 word_sprite.kill()
+                print("重叠")
                 continue
             else:
                 self.word_group.add(word_sprite)
@@ -467,7 +477,7 @@ class TypingGame(object):
         """游戏结束"""
         self.game_score_sprite.hor_center(Game_Info.SCREEN_RECT)
         self.highest_sprite.hor_center(Game_Info.SCREEN_RECT)
-        self.game_score_sprite.update(u"游戏分数: %s" % self.total_score)
+        self.game_score_sprite.update("游戏分数: %s" % self.total_score)
 
         """
         history_score_dict
@@ -492,7 +502,7 @@ class TypingGame(object):
         else:
             highest_score = highest_score_dict['score']
 
-        self.highest_sprite.update(u"历史最高: %s" % highest_score)
+        self.highest_sprite.update("历史最高: %s" % highest_score)
 
     def __check_spell_word(self):
         """检查拼写单词是否正确"""
@@ -527,7 +537,7 @@ class TypingGame(object):
             color = Game_Info.RED
         if self.game_blood >= 25 * 10:
             color = Game_Info.BLUE
-        if self.game_total_blood-30 <= self.game_blood <= self.game_total_blood:
+        if self.game_total_blood - 30 <= self.game_blood <= self.game_total_blood:
             color = Game_Info.ORANGE
 
         # 绘制游戏能量

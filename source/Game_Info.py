@@ -1,22 +1,31 @@
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/python3
+# -*- coding:utf-8 -*-
 """
 Author: Hui
-Description: {游戏配置信息模块}
+Description: { 游戏配置信息模块 }
 """
+import os
+import sys
 import ctypes
 import pygame
 import configparser
+
+# 项目根目录
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+print(sys.path[0])
 
 
 class GameConfig(object):
     """游戏配置文件类"""
 
-    GAME_INFO = "game_info"                     # 配置文件游戏信息结点名称
-    GAME_STYLE = "game_style"                   # 配置文件游戏样式结点名称
-    GAME_SCORE = "game_score"                   # 配置文件游戏分数结点名称
+    GAME_INFO = "game_info"  # 配置文件游戏信息结点名称
+    GAME_STYLE = "game_style"  # 配置文件游戏样式结点名称
+    GAME_SCORE = "game_score"  # 配置文件游戏分数结点名称
 
-    config_file_path = "resource/config.cfg"    # 游戏配置文件路径
+    config_file_path = os.path.join(BASE_DIR, r"resource\config.cfg")  # 游戏配置文件路径
+
+    print(config_file_path)
 
     # 把配置文件类设置成单例模式
     _instance = None
@@ -27,18 +36,17 @@ class GameConfig(object):
         return cls._instance
 
     def __init__(self):
-
         self.author = None
         self.game_name = None
         self.version = None
         self.e_mail = None
 
-        self.frame_pre_sec = None       # 游戏帧率
-        self.word_size = None           # 英文单词的大小
-        self.word_normal_color = None   # 单词的正常颜色
-        self.spell_ok_color = None      # 单词拼写成功的颜色
-        self.game_level = None          # 游戏等级
-        self.game_init_blood = None     # 游戏初始血量
+        self.frame_pre_sec = None  # 游戏帧率
+        self.word_size = None  # 英文单词的大小
+        self.word_normal_color = None  # 单词的正常颜色
+        self.spell_ok_color = None  # 单词拼写成功的颜色
+        self.game_level = None  # 游戏等级
+        self.game_init_blood = None  # 游戏初始血量
         self.history_score_dict = None  # 游戏历史记录
         self.__parser_config()
 
@@ -112,35 +120,71 @@ SCREEN_Y = win_api.GetSystemMetrics(1)
 
 game_conf = GameConfig()
 
-GAME_MUSICS = ["resource/music/bgm1.mp3", "resource/music/bgm2.mp3"]
+GAME_MUSICS = [
+    os.path.join(BASE_DIR, "resource/music/bgm1.mp3"),
+    os.path.join(BASE_DIR, "resource/music/bgm2.mp3"),
+]
+
 GAME_NAME = game_conf.game_name
-GAME_LEVEL = {'1': 0.3, '2': 0.5, '3': 1, '4': 1.5, '5': 2}           # 游戏困难等级与单词下落速度相互匹配字典
-SCREEN_RECT = pygame.Rect(0, 0, SCREEN_X * 0.85, SCREEN_Y * 0.85)     # 游戏窗口大小(电脑分辨率 * 0.85)
+
+# 游戏困难等级与单词下落速度相互匹配字典
+GAME_LEVEL = {
+    '1': 0.3,
+    '2': 0.5,
+    '3': 1,
+    '4': 1.5,
+    '5': 2
+}
+
+# 游戏窗口大小(电脑分辨率 * 0.85)
+SCREEN_RECT = pygame.Rect(0, 0, SCREEN_X * 0.85, SCREEN_Y * 0.85)
+
+# 单词输入框的大小
 INPUT_RECT_WIDTH = 600
 INPUT_RECT_HEIGHT = 100
 GAME_BLOOD_RECT = pygame.Rect(SCREEN_RECT.width / 2 - 250, SCREEN_RECT.height - 26, 500, 25)
 
-GAME_ICON = "resource/image/rabbit.ico"
-GAME_ICON_32 = "resource/image/rabbit_32.png"
-GAME_ICON_48 = "resource/image/rabbit_48.png"
-VOICE_ICO = "resource/image/voice.png"
-MUTE_ICO = "resource/image/mute.png"
-GAME_BACKGROUND = "resource/image/game_bg.png"
-GAME_OVER_BACKGROUND = "resource/image/game_over.png"
-INPUT_BACKGROUND = "resource/image/input_bg.png"
-GAME_SET_BLUE = "resource/image/set_blue.png"
-GAME_SET_PINK = "resource/image/set_pink.png"
+# 游戏窗口图标(LOGO)
+GAME_ICON = os.path.join(BASE_DIR, "resource/image/rabbit.ico")
+GAME_ICON_32 = os.path.join(BASE_DIR, "resource/image/rabbit_32.png")
+GAME_ICON_48 = os.path.join(BASE_DIR, "resource/image/rabbit_48.png")
 
-GAME_FONT = "resource/font/HUI.TTF"         # 游戏字体
-GAME_WORD_TEXT = "resource/en_word.txt"     # 游戏单词文本
+# 游戏静音图标
+VOICE_ICO = os.path.join(BASE_DIR, "resource/image/voice.png")
+MUTE_ICO = os.path.join(BASE_DIR, "resource/image/mute.png")
+
+# 游戏背景、结束背景
+GAME_BACKGROUND = os.path.join(BASE_DIR, "resource/image/game_bg.png")
+GAME_OVER_BACKGROUND = os.path.join(BASE_DIR, "resource/image/game_over.png")
+
+# 单词输入框背景图
+INPUT_BACKGROUND = os.path.join(BASE_DIR, "resource/image/input_bg.png")
+
+# 游戏设置按钮图片
+GAME_SET_BLUE = os.path.join(BASE_DIR, "resource/image/set_blue.png")
+GAME_SET_PINK = os.path.join(BASE_DIR, "resource/image/set_pink.png")
+
+# 游戏字体
+GAME_FONT = os.path.join(BASE_DIR, "resource/font/HUI.TTF")
+
+# 游戏单词文本
+GAME_WORD_JSON = os.path.join(BASE_DIR, "resource/words.json")
 
 # 单词拼写成功后的消失动画
-KILL_ANIMATION = ["resource/image/animation/" + str(img_num).zfill(3) + ".png" for img_num in range(8)]
+KILL_ANIMATION = [os.path.join(BASE_DIR, "resource/image/animation/") + str(img_num).zfill(3) + ".png"
+                  for img_num in range(8)]
 
-FRAME_PRE_SEC = int(game_conf.frame_pre_sec)        # 游戏的刷新帧率
-WORD_SIZE = int(game_conf.word_size)                # 单词大小
-WORD_FALL_SPEED = GAME_LEVEL[str(game_conf.game_level)]  # 单词下落速度
-INIT_BLOOD = int(game_conf.game_init_blood)         # 游戏初始血条
+# 游戏的刷新帧率
+FRAME_PRE_SEC = int(game_conf.frame_pre_sec)
+
+# 单词大小
+WORD_SIZE = int(game_conf.word_size)
+
+# 单词下落速度
+WORD_FALL_SPEED = GAME_LEVEL[str(game_conf.game_level)]
+
+# 游戏初始血条
+INIT_BLOOD = int(game_conf.game_init_blood)
 
 # 创建单词的时间间隔(毫秒)
 CREATE_WORD_INTERVAL = 1000 * 5
@@ -165,8 +209,10 @@ PINK = pygame.color.Color("#ff4777")
 
 # 创建单词事件
 CREATE_WORD_EVENT = pygame.USEREVENT
+
 # 游戏结束事件
 GAME_OVER_EVENT = pygame.USEREVENT + 1
+
 # 游戏音乐结束事件
 MUSIC_END_EVENT = pygame.USEREVENT + 2
 
