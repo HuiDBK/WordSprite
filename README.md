@@ -126,14 +126,8 @@
 
 ```Python
 WordSprite
-├─.idea
-│  └─inspectionProfiles
 ├─bin
-│  └─resource
-│      ├─font
-│      ├─image
-│      │  └─animation
-│      └─music
+│  └─WordSprite.rar
 ├─document
 └─source
 │    └─resource
@@ -142,6 +136,7 @@ WordSprite
 │        │  └─animation
 │        └─music
 ├─readme.md
+├─requirements.txt
 ```
 
 <br/>
@@ -158,7 +153,7 @@ WordSprite
 
 <br/>
 
-## 界面展示及使用说明
+## 使用说明
 
 ### 游戏主界面
 
@@ -185,17 +180,9 @@ WordSprite
 
 <br/>
 
-### 游戏结束界面
-
-![游戏结束界面](https://img-blog.csdnimg.cn/2021031114213818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI5ODU3,size_16,color_FFFFFF,t_70)
-游戏结束界面，展示了游戏当前等级、分数及当前游戏等级的历史最高，还可供玩家选择是否在玩一局或者退出。
-
-<br/>
-
 ### 游戏设置界面
 
 ![游戏设置界面](https://images.gitee.com/uploads/images/2020/1008/194124_647096c5_4986021.png '游戏设置界面')
-
 
 
 游戏设置界面用于调节游戏配置信息，游戏运行时也可以调出动态调节。
