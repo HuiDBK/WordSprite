@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/zip/env python
 # -*- coding:utf-8 -*-
 """
 Author: Hui

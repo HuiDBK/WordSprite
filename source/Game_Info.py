@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/zip/python3
 # -*- coding:utf-8 -*-
 """
 Author: Hui
