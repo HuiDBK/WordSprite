@@ -6,8 +6,8 @@ Description: { PyGame游戏精灵模块 }
 """
 import pygame
 import random
-import Game_Info
-from Game_Info import GameConfig
+from word_sprite import Game_Info
+from word_sprite.Game_Info import GameConfig
 
 
 class BaseSprite(pygame.sprite.Sprite):

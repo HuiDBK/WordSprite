@@ -4,19 +4,19 @@
 Author: Hui
 Description: { 游戏视图模块 }
 """
-import Game_Info
 import threading
 import PySimpleGUI as sg
-from Game_Info import GameConfig
 from tkinter import colorchooser
-from Game_Main import TypingGame
+
+from word_sprite import Game_Info
+from word_sprite.Game_Info import GameConfig
 
 
 class BaseWin(object):
     """窗口父类"""
     WIN_THEME = sg.theme('DarkBlue1')
     text_color = 'white'
-    game_conf = GameConfig()    # 游戏信息配置类
+    game_conf = GameConfig()  # 游戏信息配置类
 
     def __init__(self, title):
         self.title = title
@@ -31,9 +31,13 @@ class BaseWin(object):
 
 class GameStartWin(BaseWin):
     """游戏开始窗口"""
+
     _voice_flag = True
 
     def __init__(self, title):
+
+        from word_sprite.Game_Main import TypingGame  # handle circular import
+        self.TypingGame = TypingGame
         super().__init__(title)
         self.__init_layout()
 
@@ -46,9 +50,11 @@ class GameStartWin(BaseWin):
         self.layout = [
             [sg.Text(size=(70, 0)), sg.Image(filename=voice_img, key='voice_control', enable_events=True)],
             [sg.Text(size=(10, 10)), sg.Text('Word  Sprite', font=(u'宋体', 50)), sg.Text(size=(10, 10))],
-            [sg.Text(size=(23, 10)), sg.Button(u'开始游戏', font=(u'宋体', 30), key='start_game'), sg.Text(size=(23, 10))],
+            [sg.Text(size=(23, 10)), sg.Button(u'开始游戏', font=(u'宋体', 30), key='start_game'),
+             sg.Text(size=(23, 10))],
             [sg.Text(size=(23, 5)), sg.Button(u'游戏设置', font=(u'宋体', 30), key='game_set'), sg.Text(size=(23, 5))],
-            [sg.Text(size=(23, 10)), sg.Button(u'历史最高', font=(u'宋体', 30), key='show_score'), sg.Text(size=(23, 10))],
+            [sg.Text(size=(23, 10)), sg.Button(u'历史最高', font=(u'宋体', 30), key='show_score'),
+             sg.Text(size=(23, 10))],
             [
                 sg.Text(size=(70, 0)),
                 sg.Image(
@@ -56,7 +62,7 @@ class GameStartWin(BaseWin):
                     key='game_ico',
                     enable_events=True
                 )
-             ]
+            ]
         ]
 
     def run(self):
@@ -70,6 +76,7 @@ class GameStartWin(BaseWin):
 
     def __event_handler(self):
         """窗口事件监听"""
+
         while True:
             event, value_dict = self.window.read(timeout=20)
             print(event, value_dict)
@@ -89,10 +96,10 @@ class GameStartWin(BaseWin):
             elif event in 'start_game':
                 print('开始游戏')
                 self.window.Hide()
-                TypingGame.game_over_flag = False
-                TypingGame.game_quit_flag = False
-                threading.Thread(target=self.start_game).start()    # 利用线程开启游戏防止窗口卡死
-            elif event in 'game_set' or TypingGame.game_pause_flag:
+                self.TypingGame.game_over_flag = False
+                self.TypingGame.game_quit_flag = False
+                threading.Thread(target=self.start_game).start()  # 利用线程开启游戏防止窗口卡死
+            elif event in 'game_set' or self.TypingGame.game_pause_flag:
                 print('游戏设置')
                 self.window.Disable()
                 self.game_set()
@@ -100,7 +107,7 @@ class GameStartWin(BaseWin):
                 print('历史最高')
                 self.window.Disable()
                 self.show_score()
-            elif TypingGame.game_quit_flag:
+            elif self.TypingGame.game_quit_flag:
                 self.window.UnHide()
         self.window.close()
 
@@ -118,10 +125,10 @@ class GameStartWin(BaseWin):
         self.window.Disable()
         game_conf = Game_Info.GameConfig()
 
-        show_text = '游戏作者: \t' + game_conf.author + '\n\n'\
-                    '游戏名称: \t' + game_conf.game_name + '\n\n'\
-                    '游戏版本: \t' + game_conf.version + '\n\n'\
-                    '作者邮箱: \t' + game_conf.e_mail + '\n'
+        show_text = '游戏作者: \t' + game_conf.author + '\n\n' \
+                                                        '游戏名称: \t' + game_conf.game_name + '\n\n' \
+                                                                                               '游戏版本: \t' + game_conf.version + '\n\n' \
+                                                                                                                                    '作者邮箱: \t' + game_conf.e_mail + '\n'
         sg.Popup(
             show_text,
             title=u'关于作者',
@@ -141,10 +148,9 @@ class GameStartWin(BaseWin):
         """查看历史最高分"""
         GameScoreWin(u'历史最高', self).run()
 
-    @staticmethod
-    def start_game():
+    def start_game(self):
         """开始游戏"""
-        TypingGame().start_game()
+        self.TypingGame().start_game()
 
     @classmethod
     def voice_flag(cls):
@@ -359,7 +365,7 @@ class GameSetWin(BaseWin):
                 break
 
         self.window.close()
-        TypingGame.game_pause_flag = False
+        self.TypingGame.game_pause_flag = False
 
         # 恢复父窗口可用
         if self.parent_win is not None:
@@ -407,7 +413,7 @@ class GameSetWin(BaseWin):
             game_level = 4
         elif data <= 50:
             game_level = 5
-        return game_level#
+        return game_level  #
 
 
 class GameScoreWin(BaseWin):
@@ -427,7 +433,7 @@ class GameScoreWin(BaseWin):
 
     def __init_layout(self):
         """初始化窗口布局"""
-        score_dict = Game_Info.game_conf.history_score_dict       # 游戏历史记录
+        score_dict = Game_Info.game_conf.history_score_dict  # 游戏历史记录
         level_0, level_1 = eval(score_dict[self.levels[0]]), eval(score_dict[self.levels[1]])
         level_2, level_3 = eval(score_dict[self.levels[2]]), eval(score_dict[self.levels[3]])
         level_4 = eval(score_dict[self.levels[4]])

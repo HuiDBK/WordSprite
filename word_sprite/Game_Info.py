@@ -6,9 +6,9 @@ Description: { 游戏配置信息模块 }
 """
 import os
 import sys
-import ctypes
 import pygame
 import configparser
+import screeninfo
 
 # 项目根目录
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -23,7 +23,7 @@ class GameConfig(object):
     GAME_STYLE = "game_style"  # 配置文件游戏样式结点名称
     GAME_SCORE = "game_score"  # 配置文件游戏分数结点名称
 
-    config_file_path = os.path.join(BASE_DIR, r"resource\config.cfg")  # 游戏配置文件路径
+    config_file_path = os.path.join(BASE_DIR, "resource", "config.ini")  # 游戏配置文件路径
 
     print(config_file_path)
 
@@ -114,9 +114,8 @@ class GameConfig(object):
 
 
 # 获取系统屏幕分辨率(缩放比例后)
-win_api = ctypes.windll.user32
-SCREEN_X = win_api.GetSystemMetrics(0)
-SCREEN_Y = win_api.GetSystemMetrics(1)
+screen = screeninfo.get_monitors()[0]
+SCREEN_X, SCREEN_Y = screen.width, screen.height
 
 game_conf = GameConfig()
 

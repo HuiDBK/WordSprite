@@ -9,9 +9,9 @@ import sys
 import time
 import json
 import traceback
-import Game_View
-from Game_View import *
-from Game_Sprite import *
+from word_sprite import Game_View
+from word_sprite.Game_View import *
+from word_sprite.Game_Sprite import *
 
 
 def center_pos():
@@ -583,11 +583,11 @@ class TypingGame(object):
         TypingGame().start_game()
 
 
-def main():
+def run():
     center_pos()
     # 启动游戏开始界面
     GameStartWin(title="Word Sprite").run()
 
 
 if __name__ == '__main__':
-    main()
+    run()
